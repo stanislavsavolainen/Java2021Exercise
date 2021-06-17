@@ -2,18 +2,14 @@ package task1;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class GenerateHtmlFromTemplate {
 
-	
 	final String path = "C:/myprogrammingworkspace/";
 	final String filename1 = "users.html";
-	
 	
 	public void generateSingleUserProfilePage( String simulateHttpResponseJSON ) {
 		
 	}
-	
 	
 	public void generateUsersListPage( String simulateHttpResponseJSON  ) {
 		
