@@ -1,0 +1,36 @@
+{
+  "persons": [
+    {
+      "fullname": "Pekka Mäkinen",
+      "address": "Bulevardi",
+      "nationality": "Finnish",
+      "deathdate": "",
+      "birthdate": "25.10.1981",
+      "socialsecuritynumber": "251081-268K"
+    },
+    {
+      "fullname": "Marja-Leena Kirvesterä",
+      "address": "Runeberginkatu",
+      "nationality": "Finnish",
+      "deathdate": "",
+      "birthdate": "04.03.1994",
+      "socialsecuritynumber": "040394-560U"
+    },
+    {
+      "fullname": "Kalle Jokinen",
+      "address": "Mannerheimintie",
+      "nationality": "Finnish",
+      "deathdate": "",
+      "birthdate": "09.11.1978",
+      "socialsecuritynumber": "091178-5604"
+    },
+    {
+      "fullname": "Liisa Punajärvi",
+      "address": "Lapinlahdenkatu",
+      "nationality": "Finnish",
+      "deathdate": "",
+      "birthdate": "31.12.1980",
+      "socialsecuritynumber": "311280-870E"
+    },
+  ]
+}

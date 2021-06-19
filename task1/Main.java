@@ -24,6 +24,8 @@ public class Main {
 		tmpPerson2.setAddress("Runeberginkatu");
 		personlist.add(tmpPerson2);
 		
+		
+		
 		for( Person element : personlist  ){
 			
 			System.out.println("Henkilön koko nimi :" + element.getFullname() + " ja henkilötunnus :"+element.getSocialSecurityNumber()  ) ;
@@ -40,10 +42,11 @@ public class Main {
 		System.out.println( usersPageString );
 		
 		GenerateHtmlFromTemplate generateFronEnd = new GenerateHtmlFromTemplate();
-		generateFronEnd.generateUsersListPage(usersPageString);
+		generateFronEnd.generatePersonsListPage(usersPageString);
 		
 		System.out.println("-------------------------------------------------");
 			
+		
 	}
 	
 }

@@ -1,27 +1,19 @@
 package task2;
 
-
-
-
 import static org.junit.Assert.*;
-
 
 // https://repo1.maven.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
 
-
 public class TestClass {
 
-	
 	public void linebreaks(){
 		for( int linebreak = 0; linebreak < 3; linebreak++)System.out.println();
 	}
-	
 		
 	@org.junit.Test
 	public void testCorrectAnswer(){
 		
 		linebreaks();
-		
 		System.out.println("Test \"CorrectAnswer\": function give result what expected");
 		
 		boolean canUseNegativeValuesInArray = false;
@@ -35,12 +27,10 @@ public class TestClass {
 		
 	}
 	
-	
 	@org.junit.Test
 	public void testWithNegativeNumbers(){
 		
 		linebreaks();
-		
 		System.out.println("Test \"WithNegativeNumbers\": function use abs-values for count distance between positive and negative numbers");
 		
 		boolean canUseNegativeValuesInArray = true;
@@ -64,12 +54,12 @@ public class TestClass {
 		boolean canUseNegativeValuesInArray = true;
 		FindSmalestNumberDistance searchClass = new FindSmalestNumberDistance();
 		searchClass.enableConsoleLog(false);
-		int myNumbers[] = { searchClass.maxValue -1  , searchClass.minValue + 1 };
+		int myNumbers[] = { searchClass.maxValue , searchClass.minValue };
 		int findMinDistance = searchClass.find(myNumbers, canUseNegativeValuesInArray);
 		System.out.print("Minimal distance between numbers is : " + findMinDistance);
 		
 		//assertTrue( ( findMinDistance >= 0 || findMinDistance < ( searchClass.maxValue +  Math.abs(searchClass.minValue) ) ) );
-		assertTrue( ! ( findMinDistance < 0 || findMinDistance > ( searchClass.maxValue +  Math.abs(searchClass.minValue)  ) ) );
+		assertTrue( ! ( findMinDistance <= 0 || findMinDistance > ( searchClass.maxValue +  Math.abs(searchClass.minValue)  ) ) );
 	}
 	
 	@org.junit.Test
@@ -89,5 +79,43 @@ public class TestClass {
 		assertTrue( ! ( findMinDistance <= 0 || findMinDistance > ( searchClass.maxValue +  Math.abs(searchClass.minValue)  ) ) );
 		
 	}
+	
+	@org.junit.Test
+	public void checkOnlyOneElement(){
+		
+		linebreaks();
+		System.out.println("Test \"OnlyOneElement\": if array have only one element ");
+	
+		boolean canUseNegativeValuesInArray = false;
+		// this also present same case as int myNumbers[] = { 34, 34, 34 };
+		int myNumbers[] = { 34 }; 
+		
+		FindSmalestNumberDistance searchClass = new FindSmalestNumberDistance();
+		int findMinDistance = searchClass.find(myNumbers, canUseNegativeValuesInArray);
+		System.out.print("Minimal distance between numbers is : " + findMinDistance);
+		
+		assertSame(findMinDistance, 0);
+	
+	}
+	
+	
+	@org.junit.Test
+	public void checkNullElement(){
+		
+		linebreaks();
+		System.out.println("Test \"NullElement\": if array don't have any element or not initialized ");
+	
+		boolean canUseNegativeValuesInArray = false;
+		
+		int myNumbers[] = null; 
+		
+		FindSmalestNumberDistance searchClass = new FindSmalestNumberDistance();
+		int findMinDistance = searchClass.find(myNumbers, canUseNegativeValuesInArray);
+		System.out.print("Minimal distance between numbers is : " + findMinDistance);
+		
+		assertSame(findMinDistance, -2);
+	
+	}
+	
 	
 }

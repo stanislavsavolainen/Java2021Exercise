@@ -1,0 +1,43 @@
+{
+  "language": [
+    {
+      "type": "FI",
+	  "fullname": "koko nimi",
+      "address": "osoite",
+      "nationality": "kansallisuus",
+      "deathdate": "kuolinp&#xE4;iv&#xE4;",
+      "birthdate": "syntym&#xE4p&#xE4iv&#xE4;",
+      "socialsecuritynumber": "henkil&#F6;tunnus",
+	  "deathreport" : "Kuolintodistus",
+	  "reportofoffence" : "Rikosilmoitus",
+	  "loanapplication" : "Laina hakemus",
+	  "deathmsg1" : "Hyv#xE4 asiakas teid#xE4;n sukulainen ...",
+	  "deathmsg2" : "on kuollut ...",
+	  "loanmsg1" : "Laina sopimus on allekirjoitettu. Hakija ...",
+	  "loanmsg2" : "otti lainaa ...",
+	  "loanmsg3" : "ja aikoo maksaa ...",
+	  "loanmsg4" : "menness#xE4;",
+	  "offensemsg1" : "Rikosilmoitus henkil&#F6;st#xE4; ...",
+	  "offensemsg2" : "on valmis.",
+    },
+    {
+      "type": "EN",
+	  "fullname": "fullname",
+      "address": "address",
+      "nationality": "nationality",
+      "deathdate": "deathdate",
+      "birthdate": "birthdate",
+      "socialsecuritynumber": "socialsecuritynumber",
+	  "reportofoffence" : "Report of offence",
+	  "loanapplication" : "Loan application",
+	  "deathmsg1" : "Dear customer, your family member ...",
+	  "deathmsg2" : "is death at ...",
+	  "loanmsg1" : "Loan application confirmed. Customer ...",
+	  "loanmsg2" : "took loan ...",
+	  "loanmsg3" : "and will pay back until ...",
+	  "loanmsg4" : "",
+	  "offensemsg1" : "Your report of offence about ...",
+	  "offensemsg2" : "is done"
+    }
+  ]
+}
