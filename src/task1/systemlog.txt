@@ -1,0 +1,31 @@
+
+System=Alert ,  
+person :091178-5604die twice : 20 Jun 2021 13:10:36 GMT
+System=Ok ,  
+loan aggrement done with user :251081-268K at : 20 Jun 2021 13:10:36 GMT
+System=Ok ,  
+person :251081-268Kpay loan at : 20 Jun 2021 13:10:36 GMT
+System=Alert ,  
+person :091178-5604die twice : 20 Jun 2021 13:35:50 GMT
+System=Ok ,  
+loan aggrement done with user :251081-268K at : 20 Jun 2021 13:35:50 GMT
+System=Ok ,  
+person :251081-268K pay loan at : 20 Jun 2021 13:35:50 GMT
+System=Ok ,  
+loan aggrement done with person :040394-560U at : 20 Jun 2021 15:59:29 GMT
+System=Ok ,  
+loan aggrement done with person :040394-560U at : 20 Jun 2021 16:00:16 GMT
+System=Ok ,  
+loan aggrement done with person :040394-560U at : 20 Jun 2021 16:05:35 GMT
+System=Alert ,  
+person :091178-5604die twice : 20 Jun 2021 16:11:56 GMT
+System=Ok ,  
+loan aggrement done with person :251081-268K at : 20 Jun 2021 16:11:56 GMT
+System=Ok ,  
+person :251081-268K pay loan at : 20 Jun 2021 16:11:56 GMT
+System=Alert ,  
+someone try to use locked bank account 091178-5604 at : 20 Jun 2021 16:24:02 GMT
+System=Ok ,  
+person :040394-560Uis now dead at : 20 Jun 2021 17:13:16 GMT
+System=Ok ,  
+person :040394-560U pay loan at : 20 Jun 2021 17:13:40 GMT
