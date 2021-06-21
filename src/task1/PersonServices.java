@@ -341,8 +341,8 @@ public class PersonServices {
                OutputDataService systemlog = new OutputDataService();
                String content = "";
                content += "\nSystem=Alert ,  "
-               + "\nperson attempt :" + socialSecurityNumber+ 
-                " pay loan at locked bank account : "+( new Date().toGMTString());
+               + "\nperson :" + socialSecurityNumber+ 
+                " attempt pay loan at locked bank account : "+( new Date().toGMTString());
                systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
            }
     }
