@@ -120,8 +120,6 @@ public class Main {
 
         FindSmalestNumberDistance measureNumberDistance = new FindSmalestNumberDistance();
 
-        boolean stopNumberInput = false;
-        //int numberCount = 0;
         Integer inputValue = 0;
 
         ArrayList<Integer> inputNumberArray = new ArrayList<Integer>();
@@ -135,7 +133,6 @@ public class Main {
             try {
                 inputValue = Integer.parseInt(selectedPersonNumber);
             } catch ( Exception e) {
-                stopNumberInput = true;
                 break;
             } finally {
 

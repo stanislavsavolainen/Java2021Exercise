@@ -144,7 +144,7 @@ public class OutputDataService {
         // Lainahakemus template 
         //hardcodedHtmlPageTemplate +="\n\r \t else if( personObject.datatype == \"loan\" ) { ";
         else if(reportType.equals("loan")){
-            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div><h1>Lainasopimus template ( Loan report ) </h1></div>';";
+            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div><h1>Lainasopimus template ( Loan agreement ) </h1></div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Fullname : ' + personObject.fullname + ' </div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Loan size : ' + personObject.loansize + ' € </div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Loan pay back months : ' + personObject.loanlenght + '</div>';";
