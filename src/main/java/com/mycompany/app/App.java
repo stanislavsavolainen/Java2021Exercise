@@ -23,7 +23,7 @@ public class App {
 
     public static void main( String args [] ){
 		
-		System.out.println();
+        System.out.println();
         System.out.println("======== First task ================");
 	
         PersonServices service = new PersonServices();
@@ -123,7 +123,6 @@ public class App {
 
         FindSmalestNumberDistance measureNumberDistance = new FindSmalestNumberDistance();
 
-        boolean stopNumberInput = false;
         //int numberCount = 0;
         Integer inputValue = 0;
 
@@ -138,7 +137,6 @@ public class App {
             try {
                 inputValue = Integer.parseInt(selectedPersonNumber);
             } catch ( Exception e) {
-                stopNumberInput = true;
                 break;
             } finally {
 
@@ -158,8 +156,8 @@ public class App {
 
         int answer = measureNumberDistance.find( paramNumbers , true);
         
-		if( answer < 0 ) System.out.println("You have wrong input, if input is right distance will never be negative");
-		System.out.println("Minimal distance between numbers is : " + answer);
+	if( answer < 0 ) System.out.println("You have wrong input, if input is right distance will never be negative");
+	System.out.println("Minimal distance between numbers is : " + answer);
 		
     }
 

@@ -32,7 +32,7 @@ public class OutputDataService {
             hardcodedHtmlPageTemplate += htmlDownBlock();
 
             writeToFile( hardcodedHtmlPageTemplate , path + filename4 );
-		} 
+        } 
 
         else {
             System.out.println("Unknown report");

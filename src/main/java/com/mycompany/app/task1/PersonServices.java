@@ -17,7 +17,7 @@ import com.mycompany.app.task1.OutputDataService;
 //https://mvnrepository.com/artifact/org.json/json/20140107
 public class PersonServices {
 
-    final String projectDirectory = "C:/mavenworkdirectory/Java2021Exercise/src/main/java/com/mycompany/app/task1/";
+    final String projectDirectory = "C:/eclipse_workspace/Java2021Exercise/src/task1/";
     
     ArrayList <Person> personslist = new ArrayList<Person>();
     HashMap <String , BankAccount> bankAccountList = new HashMap<String, BankAccount> ();
@@ -104,10 +104,10 @@ public class PersonServices {
             System.out.println("Amount of bank records :" +bankJSON.length() );
             for( int jsonIndex = 0; jsonIndex < bankJSON.length(); jsonIndex++ ){
             
-            	String accountNumber = bankJSON.getJSONObject(jsonIndex).getString("accountnumber");
-            	String bankName = bankJSON.getJSONObject(jsonIndex).getString("bankname");
-            	String socialSecurityNumber = bankJSON.getJSONObject(jsonIndex).getString("socialsecuritynumber");
-            	double balance = 0.0 , loansize = 0.0;
+                String accountNumber = bankJSON.getJSONObject(jsonIndex).getString("accountnumber");
+                String bankName = bankJSON.getJSONObject(jsonIndex).getString("bankname");
+                String socialSecurityNumber = bankJSON.getJSONObject(jsonIndex).getString("socialsecuritynumber");
+                double balance = 0.0 , loansize = 0.0;
             	
                 try{
                     balance = Double.parseDouble( bankJSON.getJSONObject(jsonIndex).getString("balance") );
@@ -276,7 +276,6 @@ public class PersonServices {
                     deathReport.generateServiceReport( jsonData,  "loan");
                
                     //======================= put money on bank account ================
-                   // if( bankAccountList.containsValue("socialSecurityNumber") ) {
                     
                         if ( ! bankAccountList.get( findUser.getSocialSecurityNumber()).getIsLocked() ){
                             double currentBalance = bankAccountList.get(findUser.getSocialSecurityNumber()).getBalance();
@@ -303,12 +302,16 @@ public class PersonServices {
                                " at : "+( new Date().toGMTString());
                               systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
                     	}
-                    	
-                    //}
-                
+
                 
                 } else {
                     // ALERT , person died ( how dead person can take loan ? )
+                    OutputDataService systemlog = new OutputDataService();
+                    String content = "";
+                    content += "\nSystem=Alert ,  "
+                    + "\nDead person : "+ findUser.getSocialSecurityNumber() + 
+                    " trying take loan at : "+( new Date().toGMTString());
+                    systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
                 }
             }
             index++;
@@ -319,30 +322,38 @@ public class PersonServices {
    	
         double currentBalance = bankAccountList.get( socialSecurityNumber).getBalance();
             System.out.println("Balance :" + currentBalance + "loan pay :" + paymentAmount );
-            if( paymentAmount <= currentBalance ){
-                double currentLoanSize = bankAccountList.get( socialSecurityNumber).getLoanSize();
-                currentLoanSize -= paymentAmount;
-                currentBalance -= paymentAmount;
-                System.out.println("Loan size : " + currentLoanSize);
-                if( currentLoanSize >= 0 ){ 
-                    bankAccountList.get(socialSecurityNumber).setLoanSize(currentLoanSize);
-                    bankAccountList.get(socialSecurityNumber).setBalance(currentBalance);
-                    //update bank account
-                    System.out.println("Payment success. Your bank balance is :"+ 
-                    bankAccountList.get( socialSecurityNumber).getBalance() + "and loan left :" + 
-                    bankAccountList.get( socialSecurityNumber).getLoanSize() 
-                   );
-                    updateData("bank");
+            if( ! bankAccountList.get( socialSecurityNumber).getIsLocked() ) {
+                if( paymentAmount <= currentBalance ){
+                    double currentLoanSize = bankAccountList.get( socialSecurityNumber).getLoanSize();
+                    currentLoanSize -= paymentAmount;
+                    currentBalance -= paymentAmount;
+                    System.out.println("Loan size : " + currentLoanSize);
+                    if( currentLoanSize >= 0 ){ 
+                        bankAccountList.get(socialSecurityNumber).setLoanSize(currentLoanSize);
+                        bankAccountList.get(socialSecurityNumber).setBalance(currentBalance);
+                        //update bank account
+                        System.out.println("Payment success. Your bank balance is :"+ 
+                        bankAccountList.get( socialSecurityNumber).getBalance() + "and loan left :" + 
+                        bankAccountList.get( socialSecurityNumber).getLoanSize() 
+                        );
+                        updateData("bank");
                     
-                    OutputDataService systemlog = new OutputDataService();
-                    String content = "";
-                    content += "\nSystem=Ok ,  "
-                     + "\nperson :" + socialSecurityNumber+ 
-                     " pay loan at : "+( new Date().toGMTString());
-                    systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
+                        OutputDataService systemlog = new OutputDataService();
+                        String content = "";
+                        content += "\nSystem=Ok ,  "
+                        + "\nperson :" + socialSecurityNumber+ 
+                        " pay loan at : "+( new Date().toGMTString());
+                        systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
+                    }
                 }
-        }
-     
+           } else {
+               OutputDataService systemlog = new OutputDataService();
+               String content = "";
+               content += "\nSystem=Alert ,  "
+               + "\nperson attempt :" + socialSecurityNumber+ 
+                " pay loan at locked bank account : "+( new Date().toGMTString());
+               systemlog.appendToFile(content, projectDirectory + "systemlog.txt");
+           }
     }
     
     public void updateData( String dataType){

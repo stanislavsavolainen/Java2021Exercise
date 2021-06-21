@@ -19,13 +19,13 @@ public class AppTest
         for( int linebreak = 0; linebreak < 3; linebreak++)System.out.println();
     }
     
-	//====================== task 1 ===========================
-	
-	@Test
+    //====================== task 1 ===========================
+
+    @Test
     public void DisplayAllPersonsData(){
-		
-		linebreaks();
-		System.out.println("task1: Test -> display all persons ");
+
+        linebreaks();
+        System.out.println("task1: Test -> display all persons ");
 
         PersonServices personsData = new PersonServices();
         String jsonResponse = personsData.displayAllPersons();
@@ -37,26 +37,25 @@ public class AppTest
 
     @Test
     public void ConfirmPersonIsDead(){
-		
-		linebreaks();
-		System.out.println("task1: Test -> confirm person is death ");
-		
+
+        linebreaks();
+        System.out.println("task1: Test -> confirm person is death ");
+
         PersonServices personsData = new PersonServices();	
         personsData.PersonDeathProcedure("091178-5604");
     }
 
     @Test
     public void TakeLoan(){
-		
-		linebreaks();
-		System.out.println("task1: Test -> get loan and pay loan ");
-		
+
+        linebreaks();
+        System.out.println("task1: Test -> get loan and pay loan ");
+
         PersonServices personsData = new PersonServices();
         personsData.PersonTakeLoan("251081-268K" , 500.80, 24, "Nordea");	
         personsData.PersonPayLoan("251081-268K", 100);
     }
-	
-	
+
     //====================== task 2 =========================== 	
     @Test
     public void testCorrectAnswer(){
@@ -177,8 +176,8 @@ public class AppTest
         System.out.print("Minimal distance between numbers is : " + findMinDistance);
 
         assertSame(findMinDistance, 1);
-		
-		System.out.println();
+
+        System.out.println();
 
     }
 
