@@ -3,16 +3,16 @@
  		  {
  			   "bankname": "Nordea", 
  			  "accountnumber": "null", 
- 			  "balance": "3904.8000000000006", 
- 			  "loansize": "2805.6000000000004", 
+ 			  "balance": "5107.200000000001", 
+ 			  "loansize": "4008.000000000001", 
  			  "islocked": "false", 
  			  "socialsecuritynumber": "251081-268K" 
  		 },
  		  {
  			   "bankname": "S-pankki", 
  			  "accountnumber": "null", 
- 			  "balance": "268.0", 
- 			  "loansize": "168.0", 
+ 			  "balance": "223.0", 
+ 			  "loansize": "123.0", 
  			  "islocked": "true", 
  			  "socialsecuritynumber": "040394-560U" 
  		 },

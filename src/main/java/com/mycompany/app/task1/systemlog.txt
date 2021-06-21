@@ -29,3 +29,25 @@ System=Ok ,
 person :040394-560Uis now dead at : 20 Jun 2021 17:13:16 GMT
 System=Ok ,  
 person :040394-560U pay loan at : 20 Jun 2021 17:13:40 GMT
+System=Alert ,  
+person :040394-560Udie twice : 21 Jun 2021 09:46:19 GMT
+System=Ok ,  
+person :040394-560U pay loan at : 21 Jun 2021 09:55:16 GMT
+System=Ok ,  
+loan aggrement done with person :251081-268K at : 21 Jun 2021 10:34:22 GMT
+System=Ok ,  
+person :251081-268K pay loan at : 21 Jun 2021 10:34:22 GMT
+System=Alert ,  
+person :091178-5604die twice : 21 Jun 2021 10:34:22 GMT
+System=Ok ,  
+loan aggrement done with person :251081-268K at : 21 Jun 2021 10:38:00 GMT
+System=Ok ,  
+person :251081-268K pay loan at : 21 Jun 2021 10:38:00 GMT
+System=Alert ,  
+person :091178-5604die twice : 21 Jun 2021 10:38:01 GMT
+System=Ok ,  
+loan aggrement done with person :251081-268K at : 21 Jun 2021 10:40:18 GMT
+System=Ok ,  
+person :251081-268K pay loan at : 21 Jun 2021 10:40:18 GMT
+System=Alert ,  
+person :091178-5604die twice : 21 Jun 2021 10:40:18 GMT

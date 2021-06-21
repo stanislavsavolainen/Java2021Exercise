@@ -1,4 +1,4 @@
-package task1;
+package com.mycompany.app.task1;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -7,9 +7,10 @@ public class OutputDataService {
     // output front-end report file path
     final String path = "C:/outputfile/"; 
     final String filename1 = "persons.html";
-    final String filename2 = "person.html";
+    final String filename2 = "user.html";
     final String filename3 = "death.html";
     final String filename4 = "loan.html";
+    final String filename5 = "litigation.html";
 
     public void generateServiceReport( String simulateHttpResponseJSON , String reportType ){
 
@@ -144,9 +145,9 @@ public class OutputDataService {
         // Lainahakemus template 
         //hardcodedHtmlPageTemplate +="\n\r \t else if( personObject.datatype == \"loan\" ) { ";
         else if(reportType.equals("loan")){
-            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div><h1>Lainasopimus template ( Loan report ) </h1></div>';";
+            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div><h1>Lainasopimus template ( Loan agreement ) </h1></div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Fullname : ' + personObject.fullname + ' </div>';";
-            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Loan size : ' + personObject.loansize + ' € </div>';";
+            hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Loan size : ' + personObject.loansize + ' euro </div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Loan pay back months : ' + personObject.loanlenght + '</div>';";
             hardcodedHtmlPageTemplate +="\n\r \t\t uiPage += '<div> Bank ( who offer loan ) : ' + personObject.bankname + '</div>';";
             //hardcodedHtmlPageTemplate +="\n\r \t } ";

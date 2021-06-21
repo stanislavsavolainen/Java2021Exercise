@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="10" failures="0" name="com.mycompany.app.AppTest" time="0.256" errors="0" skipped="0">
+  <properties>
+    <property name="java.vendor" value="Eclipse OpenJ9"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\default\jclSC180\vm.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\se-service.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\rt.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\resources.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jsse.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\charsets.jar;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jce.jar"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.runtime.version" value="1.8.0_222-b10"/>
+    <property name="user.name" value="stanislav3"/>
+    <property name="java.compiler" value="j9jit29"/>
+    <property name="os.encoding" value="UTF8"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="user.language" value="fi"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\default;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\default;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin"/>
+    <property name="classworlds.conf" value="C:\programs\apache-maven-3.8.1\bin\..\bin\m2.conf"/>
+    <property name="jdk.extensions.version" value="8.0.222.0"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="com.ibm.system.agent.path" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="com.ibm.zero.version" value="2"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\endorsed"/>
+    <property name="com.ibm.oti.vm.library.version" value="29"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="maven.conf" value="C:\programs\apache-maven-3.8.1\bin\../conf"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="user.country" value="FI"/>
+    <property name="java.home" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre"/>
+    <property name="java.vm.info" value="JRE 1.8.0 Windows 7 x86-32-Bit 20190717_289 (JIT enabled, AOT enabled)
+OpenJ9   - 0f66c6431
+OMR      - ec782f26
+JCL      - f147086df1 based on jdk8u222-b10"/>
+    <property name="os.version" value="6.1"/>
+    <property name="java.awt.fonts" value=""/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="openj9-0.15.1"/>
+    <property name="user.variant" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="jdk.extensions.name" value="Extensions for OpenJDK for Eclipse OpenJ9"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="user.home" value="C:\Users\stanislav3"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="library.jansi.path" value="C:\programs\apache-maven-3.8.1\bin\..\lib\jansi-native"/>
+    <property name="java.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\default;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin;C:\Windows\system32;C:\Windows;C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\CodeBlocks\MinGW\bin;C:\programs\Diffuse;C:\Program Files\CodeBlocks\MinGW\bin;C:\programs\apache-maven-3.8.1\bin;."/>
+    <property name="java.vendor.url" value="http://www.eclipse.org/openj9"/>
+    <property name="java.vm.vendor" value="Eclipse OpenJ9"/>
+    <property name="java.fullversion" value="1.8.0_222-b10
+JRE 1.8.0 Windows 7 x86-32-Bit 20190717_289 (JIT enabled, AOT enabled)
+OpenJ9   - 0f66c6431
+OMR      - ec782f26
+JCL      - f147086df1 based on jdk8u222-b10"/>
+    <property name="maven.home" value="C:\programs\apache-maven-3.8.1\bin\.."/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.class.path" value="C:\programs\apache-maven-3.8.1\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.io.tmpdir" value="C:\Users\STANIS~1\AppData\Local\Temp\"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\programming2021\java\cgi_task1\maven4\my-app"/>
+    <property name="ibm.system.encoding" value="Cp1252"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="java.ext.dirs" value="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\ext"/>
+    <property name="user.dir" value="C:\programming2021\java\cgi_task1\maven4\my-app"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="Eclipse OpenJ9 VM"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.vm.bitmode" value="32"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="java.specification.version" value="1.8"/>
+  </properties>
+  <testcase classname="com.mycompany.app.AppTest" name="checkNullElement" time="0.019"/>
+  <testcase classname="com.mycompany.app.AppTest" name="checkMaxMinValue" time="0.009"/>
+  <testcase classname="com.mycompany.app.AppTest" name="TakeLoan" time="0.075"/>
+  <testcase classname="com.mycompany.app.AppTest" name="checkOnlyOneElement" time="0.001"/>
+  <testcase classname="com.mycompany.app.AppTest" name="testCorrectAnswer" time="0.004"/>
+  <testcase classname="com.mycompany.app.AppTest" name="DisplayAllPersonsData" time="0.047"/>
+  <testcase classname="com.mycompany.app.AppTest" name="testWithNegativeNumbers" time="0.082"/>
+  <testcase classname="com.mycompany.app.AppTest" name="checkZeroValue" time="0.013"/>
+  <testcase classname="com.mycompany.app.AppTest" name="ConfirmPersonIsDead" time="0.003"/>
+  <testcase classname="com.mycompany.app.AppTest" name="sameDistance" time="0.003"/>
+</testsuite>

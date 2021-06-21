@@ -1,4 +1,4 @@
-package task1;
+package com.mycompany.app.task1;
 
 public class BankAccount {
 

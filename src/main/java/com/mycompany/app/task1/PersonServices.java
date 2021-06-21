@@ -1,4 +1,4 @@
-package task1;
+package com.mycompany.app.task1;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,10 +10,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONArray;
 
+import com.mycompany.app.task1.Person;
+import com.mycompany.app.task1.BankAccount;
+import com.mycompany.app.task1.OutputDataService;
+
 //https://mvnrepository.com/artifact/org.json/json/20140107
 public class PersonServices {
 
-    final String projectDirectory = "C:/eclipse_workspace/Java2021Exercise/src/task1/";
+    final String projectDirectory = "C:/mavenworkdirectory/Java2021Exercise/src/main/java/com/mycompany/app/task1/";
     
     ArrayList <Person> personslist = new ArrayList<Person>();
     HashMap <String , BankAccount> bankAccountList = new HashMap<String, BankAccount> ();
@@ -141,7 +145,14 @@ public class PersonServices {
         }
     	
     }
-    	 
+    
+
+    public void loadLanguages(){
+        String path = projectDirectory;
+        String filename ="language.json";
+        String content = "";
+    }
+	 
     public String displayAllPersons( ){
 
         String allUserBasicDetailsJSONArrayStr="";

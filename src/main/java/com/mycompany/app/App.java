@@ -1,13 +1,14 @@
+package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import task1.Person;
-import task1.OutputDataService;
-import task1.PersonServices;
-import task2.FindSmalestNumberDistance;
+import com.mycompany.app.task1.Person;
+import com.mycompany.app.task1.OutputDataService;
+import com.mycompany.app.task1.PersonServices;
+import com.mycompany.app.task2.FindSmalestNumberDistance;
 
-public class Main {
+public class App {
 
     static boolean personNumberInList( String input, String data ) {
 
@@ -21,7 +22,8 @@ public class Main {
     }
 
     public static void main( String args [] ){
-
+		
+		System.out.println();
         System.out.println("======== First task ================");
 	
         PersonServices service = new PersonServices();
@@ -116,6 +118,7 @@ public class Main {
             System.out.println("This option not match any action in task1");
         }
 
+        System.out.println(); 
         System.out.println("======== Second task ==============");
 
         FindSmalestNumberDistance measureNumberDistance = new FindSmalestNumberDistance();
@@ -153,8 +156,11 @@ public class Main {
         int collectionLoopIndex = 0;
         for( Integer collectionElement : inputNumberArray  ) paramNumbers[collectionLoopIndex++] = collectionElement;
 
-        measureNumberDistance.find( paramNumbers , true);
+        int answer = measureNumberDistance.find( paramNumbers , true);
         
+		if( answer < 0 ) System.out.println("You have wrong input, if input is right distance will never be negative");
+		System.out.println("Minimal distance between numbers is : " + answer);
+		
     }
 
 }
