@@ -22,6 +22,7 @@ public class Main {
 
     public static void main( String args [] ){
 
+        System.out.println();
         System.out.println("======== First task ================");
 	
         PersonServices service = new PersonServices();
@@ -115,7 +116,7 @@ public class Main {
         else{
             System.out.println("This option not match any action in task1");
         }
-
+        System.out.println();
         System.out.println("======== Second task ==============");
 
         FindSmalestNumberDistance measureNumberDistance = new FindSmalestNumberDistance();
@@ -150,7 +151,9 @@ public class Main {
         int collectionLoopIndex = 0;
         for( Integer collectionElement : inputNumberArray  ) paramNumbers[collectionLoopIndex++] = collectionElement;
 
-        measureNumberDistance.find( paramNumbers , true);
+        int answer = measureNumberDistance.find( paramNumbers , true);
+        if( answer < 0 ) System.out.println("You have wrong input, if input is right, then distance will never be negative");
+        System.out.println("Minimal distance between numbers is : " + answer);
         
     }
 
