@@ -112,30 +112,30 @@ public class PersonServices {
                 try{
                     balance = Double.parseDouble( bankJSON.getJSONObject(jsonIndex).getString("balance") );
                     loansize = Double.parseDouble( bankJSON.getJSONObject(jsonIndex).getString("loansize") );
+
+                    boolean isLocked = false;
+                    String isLockedStr = "";
+                    isLockedStr =  bankJSON.getJSONObject(jsonIndex).getString("islocked");
+                    if( isLockedStr.equals("true")){
+                        isLocked = true;
+                    }
+                
+                    else if( isLockedStr.equals("false")){
+                        isLocked = false;
+                    }
+                
+                    BankAccount tempAccount = new BankAccount();
+                    tempAccount.setBalance( ( (double) Math.round(balance * 100) / 100 ) ); //parse-double value
+                    tempAccount.setLoanSize( ( (double) Math.round(loansize * 100) / 100 ) ); //parse-double value
+                    tempAccount.setBankName(bankName);
+                    tempAccount.setAccountNumber(accountNumber);
+                    tempAccount.setIsLocked(isLocked);
+                    bankAccountList.put( socialSecurityNumber ,  tempAccount );
+
                 } catch(Exception parseDoubleFail ){
                     System.out.println("Unnable to read bankaccount.json balance or loansize values");
                 }
-                
-                boolean isLocked = false;
-                String isLockedStr = "";
-                isLockedStr =  bankJSON.getJSONObject(jsonIndex).getString("islocked");
-                if( isLockedStr.equals("true")){
-                	isLocked = true;
-                }
-                
-                else if( isLockedStr.equals("false")){
-                	isLocked = false;
-                }
-                
-                BankAccount tempAccount = new BankAccount();
-                tempAccount.setBalance( balance ); //parse-double value
-                tempAccount.setLoanSize( loansize ); //parse-double value
-                tempAccount.setBankName(bankName);
-                tempAccount.setAccountNumber(accountNumber);
-                tempAccount.setIsLocked(isLocked);
-                
-            	bankAccountList.put( socialSecurityNumber ,  tempAccount );
-            	
+
             }
             
             System.out.println("Successfully read file (BankAccount).");
@@ -402,8 +402,8 @@ public class PersonServices {
                 jsonStr+= "\n \t\t  {";
                 jsonStr+= "\n \t\t\t   \"bankname\": \""+tempBank.getBankName()+"\", ";
                 jsonStr+= "\n \t\t\t  \"accountnumber\": \""+tempBank.getAccountNumber()+ "\", ";
-                jsonStr+= "\n \t\t\t  \"balance\": \""+tempBank.getBalance()+ "\", ";
-                jsonStr+= "\n \t\t\t  \"loansize\": \""+tempBank.getLoanSize()+ "\", ";
+                jsonStr+= "\n \t\t\t  \"balance\": \""+ ( (double) Math.round(tempBank.getBalance() *100) / 100 ) + "\", ";
+                jsonStr+= "\n \t\t\t  \"loansize\": \""+ ( (double) Math.round( tempBank.getLoanSize() *100) / 100 )+ "\", ";
                 jsonStr+= "\n \t\t\t  \"islocked\": \""+islockedstr+ "\", ";
                 jsonStr+= "\n \t\t\t  \"socialsecuritynumber\": \""+personElement.getSocialSecurityNumber()+ "\" ";
                 jsonStr+= "\n \t\t },";
