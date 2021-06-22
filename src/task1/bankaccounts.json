@@ -3,8 +3,8 @@
  		  {
  			   "bankname": "Nordea", 
  			  "accountnumber": "null", 
- 			  "balance": "3904.8000000000006", 
- 			  "loansize": "2805.6000000000004", 
+ 			  "balance": "3904.8", 
+ 			  "loansize": "2805.6", 
  			  "islocked": "false", 
  			  "socialsecuritynumber": "251081-268K" 
  		 },
