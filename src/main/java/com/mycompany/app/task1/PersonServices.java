@@ -83,8 +83,8 @@ public class PersonServices {
     }
     
     public void loadBankAccounts() {
-    	
-    	String path = projectDirectory;
+
+        String path = projectDirectory;
         String filename ="bankaccounts.json";
         String content = "";
  
@@ -93,7 +93,7 @@ public class PersonServices {
             int i;    
             while((i = myReader.read())!=-1) content += (char) i;  
             myReader.close();
-    	
+
           //  System.out.println("++++++++++++BankAccount+++++++++++");
           //  System.out.println( content );
           //  System.out.println("++++++++++++++++++++++++++++++++++");
@@ -104,18 +104,23 @@ public class PersonServices {
             System.out.println("Amount of bank records :" +bankJSON.length() );
             for( int jsonIndex = 0; jsonIndex < bankJSON.length(); jsonIndex++ ){
             
+                BankAccount tempAccount = new BankAccount();
                 String accountNumber = bankJSON.getJSONObject(jsonIndex).getString("accountnumber");
                 String bankName = bankJSON.getJSONObject(jsonIndex).getString("bankname");
                 String socialSecurityNumber = bankJSON.getJSONObject(jsonIndex).getString("socialsecuritynumber");
                 double balance = 0.0 , loansize = 0.0;
-            	
+                boolean isLocked = false;
+
+                boolean inputDataIsBroken = false;
+                
+
                 try{
                     balance = Double.parseDouble( bankJSON.getJSONObject(jsonIndex).getString("balance") );
                     loansize = Double.parseDouble( bankJSON.getJSONObject(jsonIndex).getString("loansize") );
 
-                    boolean isLocked = false;
                     String isLockedStr = "";
                     isLockedStr =  bankJSON.getJSONObject(jsonIndex).getString("islocked");
+
                     if( isLockedStr.equals("true")){
                         isLocked = true;
                     }
@@ -123,21 +128,46 @@ public class PersonServices {
                     else if( isLockedStr.equals("false")){
                         isLocked = false;
                     }
-                
-                    BankAccount tempAccount = new BankAccount();
-                    tempAccount.setBalance( ( (double) Math.round(balance * 100) / 100 ) ); //parse-double value
-                    tempAccount.setLoanSize( ( (double) Math.round(loansize * 100) / 100 ) ); //parse-double value
+
+                    // prevent dision by 0
+                    if( tempAccount.getBalance() == 0 || tempAccount.getBalance() == 0.0 ) tempAccount.setBalance( balance );
+                    else tempAccount.setBalance( ( (double) Math.round(balance * 100) / 100 ) ); //parse-double value
+                    
+                    if( tempAccount.getLoanSize() == 0 || tempAccount.getLoanSize() == 0.0 ) tempAccount.setLoanSize( loansize);
+                    else tempAccount.setLoanSize( ( (double) Math.round(loansize * 100) / 100 ) ); //parse-double value
+                    
                     tempAccount.setBankName(bankName);
                     tempAccount.setAccountNumber(accountNumber);
                     tempAccount.setIsLocked(isLocked);
-                    bankAccountList.put( socialSecurityNumber ,  tempAccount );
+                
 
                 } catch(Exception parseDoubleFail ){
+                    inputDataIsBroken = true;
                     System.out.println("Unnable to read bankaccount.json balance or loansize values");
+                } finally {
+
+                   if( bankName == null || bankName.equals("") ) inputDataIsBroken = true;
+                   if( socialSecurityNumber.length() != 11 ) inputDataIsBroken = true;
+                  
+                   if( !inputDataIsBroken ) {
+                       //in this statement important data is not broken, minor bug allowed like typo in name or address
+                   } else {
+                       System.out.println("ALERT , recover bankAccount backup data ");
+                       OutputDataService systemlog = new OutputDataService();
+                       String bugcontent = "";
+                       bugcontent += "\nSystem=Alert , ( Data recovery required ) "
+                        + "\nBankAccount data is broken :" + socialSecurityNumber+ 
+                       "raw data debug ("+ socialSecurityNumber + ":" + bankName + ":"+ balance +":"+loansize + ")   at: "+( new Date().toGMTString());
+                       systemlog.appendToFile(bugcontent, projectDirectory + "systemlog.txt");
+                       tempAccount.setIsLocked(false);
+                   }
+                   
+                    if( socialSecurityNumber.length() != 11 ) socialSecurityNumber += "socialsecuritynumberbankiniterror:"+( new Date().toGMTString());
+                    bankAccountList.put( socialSecurityNumber ,  tempAccount );
                 }
 
             }
-            
+
             System.out.println("Successfully read file (BankAccount).");
         } catch (IOException e) {
             System.out.println("An error occurred (BankAccount).");
@@ -145,7 +175,6 @@ public class PersonServices {
         }
     	
     }
-    
 
     public void loadLanguages(){
         String path = projectDirectory;
@@ -402,8 +431,12 @@ public class PersonServices {
                 jsonStr+= "\n \t\t  {";
                 jsonStr+= "\n \t\t\t   \"bankname\": \""+tempBank.getBankName()+"\", ";
                 jsonStr+= "\n \t\t\t  \"accountnumber\": \""+tempBank.getAccountNumber()+ "\", ";
-                jsonStr+= "\n \t\t\t  \"balance\": \""+ ( (double) Math.round(tempBank.getBalance() *100) / 100 ) + "\", ";
-                jsonStr+= "\n \t\t\t  \"loansize\": \""+ ( (double) Math.round( tempBank.getLoanSize() *100) / 100 )+ "\", ";
+                //prevent division by zero
+                if( tempBank.getBalance() == 0 || tempBank.getBalance() == 0.0 ) jsonStr+= "\n \t\t\t  \"balance\": \""+ 0 + "\", ";
+                else jsonStr+= "\n \t\t\t  \"balance\": \""+ ( (double) Math.round(tempBank.getBalance() *100) / 100  ) + "\", ";
+                
+                if( tempBank.getLoanSize() == 0 || tempBank.getLoanSize() == 0.0 ) jsonStr+= "\n \t\t\t  \"loansize\": \""+ 0 + "\", ";
+                else jsonStr+= "\n \t\t\t  \"loansize\": \""+ ( (double) Math.round( tempBank.getLoanSize() *100) / 100 )+ "\", ";
                 jsonStr+= "\n \t\t\t  \"islocked\": \""+islockedstr+ "\", ";
                 jsonStr+= "\n \t\t\t  \"socialsecuritynumber\": \""+personElement.getSocialSecurityNumber()+ "\" ";
                 jsonStr+= "\n \t\t },";
