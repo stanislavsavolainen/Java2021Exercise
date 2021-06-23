@@ -159,7 +159,7 @@ public class PersonServices {
                         + "\nBankAccount data is broken :" + socialSecurityNumber+ 
                        "raw data debug ("+ socialSecurityNumber + ":" + bankName + ":"+ balance +":"+loansize + ")   at: "+( new Date().toGMTString());
                        systemlog.appendToFile(bugcontent, projectDirectory + "systemlog.txt");
-                       tempAccount.setIsLocked(false);
+                       tempAccount.setIsLocked(true);
                    }
                    
                     if( socialSecurityNumber.length() != 11 ) socialSecurityNumber += "socialsecuritynumberbankiniterror:"+( new Date().toGMTString());
